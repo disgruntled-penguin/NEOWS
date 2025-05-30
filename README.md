@@ -24,7 +24,8 @@ git clone (this repo :p)
 pip install -r requirements.txt
 ```
 
-3. get a nasa api key
+3. 
+get a nasa api key
    
 
 
@@ -35,7 +36,7 @@ python neows.py
 
 
 
-ocumentation: [NASA NEO Web Service](https://api.nasa.gov/neo/)
+Documentation: [NASA NEO Web Service](https://api.nasa.gov/neo/)
 
 
 
