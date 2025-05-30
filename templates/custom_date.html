@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Custom Date Query</h1>
+
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card" style="background-color: #112240; border: 1px solid #233554;">
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="start_date" class="form-label">Start Date</label>
+                        <input type="date" class="form-control" id="start_date" name="start_date" required
+                               value="{{ start_date if start_date else '' }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="end_date" class="form-label">End Date</label>
+                        <input type="date" class="form-control" id="end_date" name="end_date" required
+                               value="{{ end_date if end_date else '' }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="background-color: #64ffda; color: #0a192f; border: none;">
+                        Search
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if neos %}
+<h2 class="mb-4">Results</h2>
+<div class="row">
+    {% for neo in neos %}
+    <div class="col-md-6 col-lg-4">
+        <div class="neo-card">
+            <h3>{{ neo.name }}</h3>
+            <p class="{% if neo.hazardous %}hazardous{% else %}safe{% endif %}">
+                Status: {% if neo.hazardous %}Potentially Hazardous{% else %}Safe{% endif %}
+            </p>
+            <p>Approach Date: {{ neo.approach_date }}</p>
+            <p>Miss Distance: {{ "%.2f"|format(neo.miss_distance|float) }} km</p>
+            <p>Velocity: {{ "%.2f"|format(neo.velocity|float) }} km/h</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %} 

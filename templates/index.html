@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Near Earth Objects (Real time)</h1>
+
+
+
+<div class="row">
+    {% for neo in neos %}
+    <div class="col-md-6 col-lg-4">
+        <div class="neo-card">
+            <h3>{{ neo.name }}</h3>
+            <p class="{% if neo.hazardous %}hazardous{% else %}safe{% endif %}">
+                Status: {% if neo.hazardous %}Potentially Hazardous{% else %}Safe{% endif %}
+            </p>
+            <p>Approach Date: {{ neo.approach_date }}</p>
+            <p>Miss Distance: {{ "%.2f"|format(neo.miss_distance|float) }} km</p>
+            <p>Velocity: {{ "%.2f"|format(neo.velocity|float) }} km/h</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 
