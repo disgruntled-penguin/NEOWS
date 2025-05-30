@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-API_KEY = '1a8e9JPd88goaXaqHKk1JSfIZBXCD23GYoA0jkce'
+API_KEY = '' #ur key here
 
 def get_neo_data(start_date, end_date):
     url = f'https://api.nasa.gov/neo/rest/v1/feed?start_date={start_date}&end_date={end_date}&api_key={API_KEY}'
