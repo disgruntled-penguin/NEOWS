@@ -4,7 +4,7 @@ Asteroid / NEOs tracker using NASA's NEOWS. Updates real-time data about asteroi
 
 
 
-- Detailed information for each NEO:
+- Information for each NEO:
   - Object name
   - Hazardous status
   - Approach date
@@ -36,7 +36,7 @@ python neows.py
 
 
 
-Documentation: [NASA NEO Web Service](https://api.nasa.gov/neo/)
+Documentation: [NASA NEO Web Service](https://github.com/SpaceRocks/)
 
 
 
